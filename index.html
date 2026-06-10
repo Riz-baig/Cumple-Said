@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cumple de Said</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+
+        <div id="inicio">
+            <div class="cabecera">       
+                <div class="izquierda">        
+                    <img src="img/said.jpeg" class="foto">       
+                </div>
+        
+                <div class="derecha">        
+                    <img src="img/globos.png" class="globos">       
+                    <div id="contador" class="contador"></div>   
+                    <p class="frase-oso">¿Me conoces lo suficiente para venir a mi fiesta?</p>    
+                    <img src="img/oso.png" class="oso">       
+                    <img src="img/tarta.png" class="tarta">     
+                </div>
+        
+            </div>
+        
+            <h1> Hola, me llamo Said</h1>      
+            <p><img src="img/recien.png" class="recien">  Nací el 20 de junio de 2026.</p>      
+            <p><img src="img/globitos.png" class="recien"> Estoy preparando mi primer cumpleaños.</p>      
+            <p><img src="img/regalos.png" class="caja"> Si respondes correctamente las 3 preguntas conseguirás tu invitación especial.</p>      
+            <div class="zona-boton">
+                <img src="img/mision.png" class="icono-mision">          
+                <button onclick="mostrarPregunta1()"> Comenzar misión</button>           
+            </div>            
+            <p class="firma">Con cariño, Said 💙</p>
+        
+        </div>
+        <div id="p1" class="oculto">
+
+            <h2>Pregunta 1 de 3</h2>
+
+            <p>¿Cómo me llamo?</p>
+
+            <input type="text" id="respuesta1">
+
+            <button onclick="comprobar1()">Comprobar</button>
+
+        </div>
+
+        <div id="p2" class="oculto">
+
+            <h2>Pregunta 2 de 3</h2>
+            <p>¿En qué año nací?</p>
+            <input type="text" id="respuesta2">
+            <button onclick="comprobar2()"> Comprobar</button>
+            
+
+        </div>
+
+        <div id="p3" class="oculto">
+
+            <h2>Pregunta 3 de 3</h2>
+            <p>¿En qué mes nací?</p>                    
+            <input type="text" id="respuesta3">
+            <button onclick="comprobar3()">Comprobar</button>
+
+        </div>
+
+        <div id="final" class="oculto">
+
+            <h1>🎉 Pase VIP conseguido 🎉</h1>
+
+                <p>
+                    Said te espera para celebrar un día muy especial.
+                </p>
+
+                <p>
+                    Completa los datos para confirmar tu asistencia.
+                </p>
+
+            <input type="text" id="familia" placeholder="Nombre de la familia">
+
+            <select id="adultos">
+                <option value="">Adultos</option>            
+                <option value="1">1</option>           
+                <option value="2">2</option>            
+                <option value="3">3</option>            
+                <option value="4">4</option>           
+            </select>
+            
+            <select id="ninos">           
+                <option value="">Menores de 12 años</option>            
+                <option value="0">0</option>            
+                <option value="1">1</option>           
+                <option value="2">2</option>            
+                <option value="3">3</option>            
+                <option value="4">4</option>           
+            </select>
+
+            <button onclick="confirmarAsistencia()">
+                Confirmar asistencia
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="js/app.js"></script>
+    <div class="globo g1"> <img src="img/uno.jpeg" class="foto-lateral"> </div> 
+    <div class="globo g2"> <img src="img/dos.jpeg" class="foto-lateral"> </div>
+    <div class="globo g3">🎈</div>
+
+    <img src="img/nube.png" class="nube nube1">
+    <img src="img/nube.png" class="nube nube2">
+    <img src="img/nube.png" class="nube nube3">
+    <img src="img/nube.png" class="nube nube4">
+
+
+</body>
+
+</html>
