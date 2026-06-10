@@ -149,4 +149,8 @@ async function confirmarAsistencia()
     }
 }
 
+window.mostrarPregunta1 = mostrarPregunta1;
+window.comprobar1 = comprobar1;
+window.comprobar2 = comprobar2;
+window.comprobar3 = comprobar3;
 window.confirmarAsistencia = confirmarAsistencia;
