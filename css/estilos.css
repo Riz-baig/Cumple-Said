@@ -96,16 +96,26 @@ body{
     box-shadow:0 0 15px rgba(0,0,0,.2);
 }
 
-.direccion{
-    max-width:350px;
-    margin-left:40px;
+.lugar{
+    display:flex;
+    gap:80px;
+    margin:20px 0;
+}
+
+.titulo-lugar{
+    min-width:180px;
+    margin-top:20px;
+    font-weight:bold;
+}
+
+.bloque-direccion{
+    display:flex;
+    flex-direction:column;
+    margin-left:-30px;
 }
 
 .mapa{
-    width:350px;
-    text-align:center;
-    box-sizing:border-box;
-    margin-left:40px;
+    margin-top:10px;
 }
 
 .recien{
