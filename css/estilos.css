@@ -98,12 +98,14 @@ body{
 
 .direccion{
     max-width:350px;
+    margin-left:40px;
 }
 
 .mapa{
     width:350px;
     text-align:center;
     box-sizing:border-box;
+    margin-left:40px;
 }
 
 .recien{
