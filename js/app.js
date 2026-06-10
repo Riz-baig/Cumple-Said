@@ -100,7 +100,7 @@ if(localStorage.getItem("asistenciaConfirmada"))
             </p>
         `;
     }
-    
+
 async function confirmarAsistencia()
 {
     let familia = document .getElementById("familia") .value .trim()  .toLowerCase();
@@ -177,9 +177,6 @@ async function confirmarAsistencia()
         <p>Nos vemos el 20 de junio 🎂🎈🧸</p>
     `;
 
-        document.getElementById("familia").value = "";
-        document.getElementById("adultos").value = "";
-        document.getElementById("ninos").value = "";
     }
     catch(error)
     {
