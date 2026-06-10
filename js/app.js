@@ -81,6 +81,26 @@ function actualizarContador()
 }
 
 actualizarContador();
+
+if(localStorage.getItem("asistenciaConfirmada"))
+    {
+        document.getElementById("inicio").style.display = "none";
+    
+        document.getElementById("final").style.display = "block";
+    
+        document.getElementById("final").innerHTML = `
+            <h1>🎉 Ya has confirmado tu asistencia</h1>
+    
+            <p>
+                Gracias por responder a la invitación de Said 💙
+            </p>
+    
+            <p>
+                Nos vemos el día del cumpleaños 🎂🎈
+            </p>
+        `;
+    }
+    
 async function confirmarAsistencia()
 {
     let familia = document .getElementById("familia") .value .trim()  .toLowerCase();
@@ -140,13 +160,22 @@ async function confirmarAsistencia()
             }
         );
 
-        alert(
-            "🎉 Gracias " +
-            familia +
-            ". Habéis confirmado " +
-            (adultos + ninos) +
-            " asistentes."
+        localStorage.setItem(
+            "asistenciaConfirmada",
+            familia
         );
+
+        document.getElementById("final").innerHTML = `
+        <h1>🎉 ¡Asistencia confirmada!</h1>
+
+        <p>Gracias familia ${familia}.</p>
+
+        <p>Habéis confirmado ${adultos + ninos} asistentes.</p>
+
+        <p>Said os espera para celebrar su primer cumpleaños 💙</p>
+
+        <p>Nos vemos el 20 de junio 🎂🎈🧸</p>
+    `;
 
         document.getElementById("familia").value = "";
         document.getElementById("adultos").value = "";
