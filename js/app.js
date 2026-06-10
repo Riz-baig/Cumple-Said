@@ -1,8 +1,12 @@
 import {
     db,
     collection,
-    addDoc
+    addDoc,
+    getDocs,
+    query,
+    where
 }
+
 from "../firebase/config.js";
 function mostrarPregunta1()
 {
@@ -77,18 +81,12 @@ function actualizarContador()
 }
 
 actualizarContador();
-
 async function confirmarAsistencia()
 {
-    let familia = document.getElementById("familia").value.trim();
+    let familia = document .getElementById("familia") .value .trim()  .toLowerCase();
+    let adultos = parseInt(document.getElementById("adultos").value);
 
-    let adultos = parseInt(
-        document.getElementById("adultos").value
-    );
-
-    let ninos = parseInt(
-        document.getElementById("ninos").value
-    );
+    let ninos = parseInt(document.getElementById("ninos").value);
 
     if(familia == "")
     {
@@ -116,6 +114,21 @@ async function confirmarAsistencia()
 
     try
     {
+        const consulta = query(
+            collection(db, "asistentes"),
+            where("familia", "==", familia)
+        );
+
+        const resultado = await getDocs(consulta);
+
+        if(!resultado.empty)
+        {
+            alert(
+                "⚠️ Esta familia ya ha confirmado asistencia."
+            );
+            return;
+        }
+
         await addDoc(
             collection(db, "asistentes"),
             {
@@ -148,7 +161,6 @@ async function confirmarAsistencia()
         );
     }
 }
-
 window.mostrarPregunta1 = mostrarPregunta1;
 window.comprobar1 = comprobar1;
 window.comprobar2 = comprobar2;
