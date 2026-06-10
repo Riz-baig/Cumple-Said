@@ -33,7 +33,7 @@ function comprobar2()
 {
     let r = document.getElementById("respuesta2").value;
 
-    if(r === "2026")
+    if(r === "2025")
     {
         document.getElementById("p2").style.display = "none";
         document.getElementById("p3").style.display = "block";
