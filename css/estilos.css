@@ -96,6 +96,40 @@ body{
     box-shadow:0 0 15px rgba(0,0,0,.2);
 }
 
+.direccion{
+    background:#f5fbff;
+
+    border:2px dashed #8ec8ff;
+
+    border-radius:20px;
+
+    padding:15px;
+
+    max-width:350px;
+
+    margin:15px 0;
+
+    color:#4f7cff;
+
+    font-weight:bold;
+}
+
+.mapa{
+    display:inline-block;
+
+    margin-top:10px;
+
+    padding:10px 20px;
+
+    background:#4f7cff;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:20px;
+}
+
 .recien{
     width: 25px;
     height:35px;
