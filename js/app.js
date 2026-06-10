@@ -1,3 +1,9 @@
+import {
+    db,
+    collection,
+    addDoc
+}
+from "../firebase/config.js";
 function mostrarPregunta1()
 {
     document.getElementById("inicio").style.display = "none";
@@ -72,12 +78,17 @@ function actualizarContador()
 
 actualizarContador();
 
-
-function confirmarAsistencia()
+async function confirmarAsistencia()
 {
     let familia = document.getElementById("familia").value.trim();
-    let adultos = parseInt(document.getElementById("adultos").value);
-    let ninos = parseInt(document.getElementById("ninos").value);
+
+    let adultos = parseInt(
+        document.getElementById("adultos").value
+    );
+
+    let ninos = parseInt(
+        document.getElementById("ninos").value
+    );
 
     if(familia == "")
     {
@@ -103,8 +114,39 @@ function confirmarAsistencia()
         return;
     }
 
-    alert("🎉 Gracias " + familia +  ". Habéis confirmado " + (adultos + ninos) + " asistentes.");
-    document.getElementById("familia").value = "";
-    document.getElementById("adultos").value = "";
-    document.getElementById("ninos").value = "";
+    try
+    {
+        await addDoc(
+            collection(db, "asistentes"),
+            {
+                familia: familia,
+                adultos: adultos,
+                ninos: ninos,
+                total: adultos + ninos,
+                fecha: new Date()
+            }
+        );
+
+        alert(
+            "🎉 Gracias " +
+            familia +
+            ". Habéis confirmado " +
+            (adultos + ninos) +
+            " asistentes."
+        );
+
+        document.getElementById("familia").value = "";
+        document.getElementById("adultos").value = "";
+        document.getElementById("ninos").value = "";
+    }
+    catch(error)
+    {
+        console.log(error);
+
+        alert(
+            "Error guardando la asistencia"
+        );
+    }
 }
+
+window.confirmarAsistencia = confirmarAsistencia;
