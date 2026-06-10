@@ -172,7 +172,7 @@ async function confirmarAsistencia()
 
         <p>Habéis confirmado ${adultos + ninos} asistentes.</p>
 
-        <p>Said os espera para celebrar su primer cumpleaños 💙</p>
+        <p>Said os espera para celebrar su primer cumpleaños 💙 junto con el de su papa</p>
 
         <p>Nos vemos el 20 de junio 🎂🎈🧸</p>
     `;
