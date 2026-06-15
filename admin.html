@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Invitados</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:20px;
+}
+
+table{
+    border-collapse: collapse;
+    width:100%;
+}
+
+th,td{
+    border:1px solid #ccc;
+    padding:8px;
+    text-align:center;
+}
+
+th{
+    background:#f0f0f0;
+}
+
+.resumen{
+    margin-top:20px;
+    font-size:18px;
+    font-weight:bold;
+}
+</style>
+
+</head>
+<body>
+
+<h1>Listado de asistentes</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Familia</th>
+            <th>Adultos</th>
+            <th>Niños</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+
+    <tbody id="tablaAsistentes"></tbody>
+
+</table>
+
+<div class="resumen">
+
+<p>Total familias: <span id="familias">0</span></p>
+
+<p>Total adultos: <span id="adultos">0</span></p>
+
+<p>Total niños: <span id="ninos">0</span></p>
+
+<p>Total asistentes: <span id="total">0</span></p>
+
+</div>
+
+<script type="module" src="js/admin.js"></script>
+
+</body>
+</html>
